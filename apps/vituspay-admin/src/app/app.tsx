@@ -1,21 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.css';
-import NxWelcome from './nx-welcome';
 
 import { Route, Routes, Link } from 'react-router-dom';
 
 export function App() {
   return (
     <>
-      <NxWelcome title="vituspay-admin" />
-      <div />
-
       {/* START: routes */}
-      {/* These routes and navigation have been generated for you */}
-      {/* Feel free to move and update them to fit your needs */}
-      <br />
-      <hr />
-      <br />
       <div role="navigation">
         <ul>
           <li>
@@ -26,13 +16,14 @@ export function App() {
           </li>
         </ul>
       </div>
+
       <Routes>
         <Route
           path="/"
           element={
             <div>
-              This is the generated root route.{' '}
-              <Link to="/page-2">Click here for page 2.</Link>
+              <h1>Welcome to the example dashboard!</h1>
+              <Link to="/page-2">Click here for transactions</Link>
             </div>
           }
         />
