@@ -6,7 +6,6 @@ import { Transactions } from './transactions/transactions';
 export function App() {
   return (
     <>
-      {/* START: routes */}
       <div role="navigation">
         <ul>
           <li>
@@ -30,7 +29,6 @@ export function App() {
         />
         <Route path="/transactions" element={<Transactions />} />
       </Routes>
-      {/* END: routes */}
     </>
   );
 }
