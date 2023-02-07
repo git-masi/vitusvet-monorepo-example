@@ -34,10 +34,9 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nrwl/vite:test",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/vituspay-server/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
