@@ -33,7 +33,7 @@ export function Transactions() {
     <section>
       <h1>Transactions</h1>
       {transactions.map((t) => (
-        <Transaction key={t.pk} transaction={t} />
+        <Transaction key={`${t.pk}${t.sort}`} transaction={t} />
       ))}
     </section>
   );

@@ -25,7 +25,7 @@ export function initDynamoDbRepository() {
 function getTransactions(client: DynamoDBDocumentClient) {
   return async () => {
     const { Items } = await client.send(
-      new ScanCommand({ TableName, Limit: 1 })
+      new ScanCommand({ TableName, Limit: 3 })
     );
 
     return Transactions.parse(Items);
