@@ -12,23 +12,28 @@ export function Transactions() {
   useEffect(() => {
     if (didFetchRef.current) return;
 
-    (async () => {
-      const res = await fetch('http://localhost:3000/transactions');
-      const data = await TransactionsValidator.safeParseAsync(res.json());
+    const fetchTransactions = async () => {
+      try {
+        const res = await fetch('http://localhost:3000/transactions');
+        const json = await res.json();
+        const data = TransactionsValidator.parse(json);
 
-      if (data.success) {
-        setTransactions(data.data);
+        setTransactions(data);
+      } catch (error) {
+        console.error(error);
       }
+    };
 
-      didFetchRef.current = true;
-    })();
+    fetchTransactions();
+
+    didFetchRef.current = true;
   }, []);
 
   return (
     <section>
       <h1>Transactions</h1>
       {transactions.map((t) => (
-        <Transaction transaction={t} />
+        <Transaction key={t.pk} transaction={t} />
       ))}
     </section>
   );

@@ -3,12 +3,15 @@ import express from 'express';
 import { authRouter } from './app/auth/auth';
 import { initDynamoDbRepository } from './app/transactions/dynamoDb';
 import { initTransactionsRouter } from './app/transactions/transactions';
+import cors from 'cors';
 
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
 
 const app = express();
 
 const transactionsRouter = initTransactionsRouter(initDynamoDbRepository());
+
+app.use(cors());
 
 app.use(bodyParser.json());
 
