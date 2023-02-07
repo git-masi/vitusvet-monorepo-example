@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "test:all": "nx run-many --target=test"
+    "test:all": "nx run-many --target=test",
+    "dev:vituspay:server": "nx serve vituspay-server",
+    "dev:vituspay:admin": "nx serve vituspay-admin"
   },
   "private": true,
   "devDependencies": {
