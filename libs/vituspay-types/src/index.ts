@@ -1,1 +1,1 @@
-export * from './lib/vituspay-types';
+export * from './lib/transaction-types';
