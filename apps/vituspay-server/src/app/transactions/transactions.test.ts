@@ -75,6 +75,6 @@ function initInMemoryRepository() {
       },
     ],
     createTransaction: async (amount: TransactionAmountType) =>
-      '26bb301a-fb3d-4a70-84c2-fdb6a8ee59ab',
+      amount && '26bb301a-fb3d-4a70-84c2-fdb6a8ee59ab',
   };
 }
