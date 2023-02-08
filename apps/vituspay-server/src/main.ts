@@ -4,6 +4,9 @@ import { authRouter } from './app/auth/auth';
 import { initDynamoDbRepository } from './app/transactions/dynamoDb';
 import { initTransactionsRouter } from './app/transactions/transactions';
 import cors from 'cors';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
 

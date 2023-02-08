@@ -5,6 +5,7 @@ import {
   TransactionAmountType,
   TransactionAmount,
 } from '@vitusvet/vituspay-types';
+import { getCredentials } from '../utils/awsCredentials';
 
 const TableName = 'VitusPay-Resources_Transactions_dev';
 
@@ -13,7 +14,10 @@ export function initDynamoDbRepository() {
   // Refactor Note
   // =============
   // The region should be dynamic in the future
-  const dbClient = new DynamoDBClient({ region: 'us-east-1' });
+  const dbClient = new DynamoDBClient({
+    region: 'us-east-1',
+    credentials: getCredentials(process.env.AWS_PROFILE),
+  });
   const documentClient = DynamoDBDocumentClient.from(dbClient);
 
   return {
