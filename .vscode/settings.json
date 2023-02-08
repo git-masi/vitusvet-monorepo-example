@@ -35,5 +35,8 @@
     "editor.suggest.snippetsPreventQuickSuggestions": false
   },
   "[sql]": { "editor.defaultFormatter": "mtxr.sqltools" },
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
   "thunder-client.saveToWorkspace": true
 }
