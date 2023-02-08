@@ -16,13 +16,27 @@ There are alternatives to Nx that may be worth exploring. Currently, the most po
 
 ## Getting started
 
+### Init task
+
+There is a VC Code task `init` that will take all the steps necessary to start the project. Note that this may include deleting and/or creating files and folders.
+
+You will find more details in the sections below about what the `init` task does.
+
+See the section called "Tasks" below for more information on VS Code tasks generally.
+
 ### VPN
 
 If any project needs to connect to a SQL database you will need to be on the VitusVet VPN.
 
 ### AWS credentials
 
-You will need the correct AWS credentials to run backend applications locally. Unless otherwise specified you should assume you need your credentials for the dev environment.
+You will need the correct AWS credentials to run backend applications locally and interact with AWS services.
+
+Your credentials must be stored in a named profile on your machine and referenced in a .env file so that application can access them at run time.
+
+Ensure you have a .env file in your root directory with `AWS_PROFILE=dev` or whatever name you use for the profile with your dev credentials.
+
+Note that the `init` task will create the .env file for you with `AWS_PROFILE=dev`.
 
 Running frontend applications does not require credentials but you won't be able to pull any data from our databases.
 
@@ -36,7 +50,10 @@ If you are using NVM you can run `nvm use` to ensure you have the correct versio
 
 In this style of Nx monorepo there is only 1 package.json file at the root of the project.
 
-- Run `npm i` in the root directory
+You can either install Node modules manually or use the `init` task.
+
+- Run the `init` task
+- Alternatively run `npm i` in the root directory
 
 ### Nx Console
 
