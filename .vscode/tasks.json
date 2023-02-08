@@ -12,6 +12,11 @@
   },
   "tasks": [
     {
+      "label": "init",
+      "type": "shell",
+      "command": "echo 'AWS_PROFILE=dev' > .env && npm i"
+    },
+    {
       "label": "dev:vituspay:server",
       "type": "npm",
       "script": "dev:vituspay:server",
