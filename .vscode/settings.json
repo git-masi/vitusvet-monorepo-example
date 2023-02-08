@@ -1,6 +1,5 @@
 {
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "go.testOnSave": true,
   "go.lintOnSave": "package",
   "[javascript]": {
